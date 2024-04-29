@@ -1,0 +1,54 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="1" author="devdevx">
+		<ext:createCollection collectionName="movie">
+			<ext:options>
+                    {
+                    validator: {
+                        $jsonSchema: {
+                            bsonType: "object",
+                            required: ["id", "name", "createDate"],
+                            properties: {
+                            	id: {
+                                    bsonType: "string",
+                                    description: "The Id"
+                                },
+                                name: {
+                                    bsonType: "string",
+                                    description: "The Movie Name"
+                                },
+                                createDate: {
+                                    bsonType: "date",
+                                    description: "The CreateDate"
+                                },
+                                note: {
+                                    bsonType: "string",
+                                    description: "The Note"
+                                }
+                            }
+                        }
+                    },
+                    validationAction: "error",
+                    validationLevel: "strict"
+                    }
+                </ext:options>
+		</ext:createCollection>
+        <ext:createIndex collectionName="movie">
+            <ext:keys>
+                { id: 1}
+            </ext:keys>
+            <ext:options>
+                {unique: true, name: "movie_id"}
+            </ext:options>
+        </ext:createIndex>
+    </changeSet>
+    <changeSet id="drop-1" author="dropdev">
+		<ext:createCollection collectionName="demoDrop">
+			
+		</ext:createCollection>
+    </changeSet>
+</databaseChangeLog>

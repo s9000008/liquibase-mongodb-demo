@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+     file: db/changes/001_collection.xml
+  - include:
+     file: db/changes/002_insert.xml
+  - include:
+     file: db/changes/003_drop.xml

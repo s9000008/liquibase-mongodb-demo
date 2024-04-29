@@ -1,0 +1,75 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet id="888" author="devdevx">
+        <ext:insertMany collectionName="movie">
+            <ext:documents>
+                [
+                {
+                	"id": "tt9362722",
+                	"name": "Spider-Man: Across the Spider-Verse",
+                	"createDate": {"$date": "2024-04-29"},
+                	"note": "0"
+            	},
+                {
+                	"id": "tt0816692",
+                	"name": "Interstellar",
+                	"createDate": {"$date": "2024-04-29"},
+                	"note": "0"
+            	},
+                {
+                	"id": "tt4154796",
+                	"name": "Avengers: Endgame",
+                	"createDate": {"$date": "2024-04-29"},
+                	"note": "--"
+            	},
+                {
+                	"id": "tt0112159",
+                	"name": "Neon Genesis Evangelion",
+                	"createDate": {"$date": "2024-04-29"},
+                	"note": "--------------------------"
+            	}
+                ]
+            </ext:documents>
+        </ext:insertMany>
+    </changeSet>
+    <changeSet id="2" author="devdevx">
+        <ext:insertOne collectionName="movie">
+            <ext:document>
+                {
+                	"id": "tt0169858",
+                	"name": "Neon Genesis Evangelion: The End of Evangelion",
+                	"createDate": {"$date": "2024-04-29"},
+                	"note": "2024-04-29"
+            	}
+            </ext:document>
+        </ext:insertOne>
+    </changeSet>
+	<changeSet id="3" author="devdevx">
+        <ext:insertOne collectionName="movie">
+            <ext:document>
+                {
+                	"id": "tt15239678",
+                	"name": "Dune: Part Two",
+                	"createDate": {"$date": "2024-03-29"},
+                	"note": ""
+            	}
+            </ext:document>
+        </ext:insertOne>
+    </changeSet>
+    <changeSet id="5" author="devdevx">
+        <ext:insertOne collectionName="movie">
+            <ext:document>
+                {
+                	"id": "tt14190592",
+                	"name": "The Lazarus Project",
+                	"createDate": {"$date": "2024-03-29"},
+                	"note": "2024-02-29"
+            	}
+            </ext:document>
+        </ext:insertOne>
+    </changeSet>
+</databaseChangeLog>
