@@ -5,6 +5,46 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="test" author="test">
+    <changeSet id="rollback-1" author="rollbackdev">
+		<ext:insertMany collectionName="city">
+			<ext:documents>
+				[
+					{
+						"id":1220,
+						"name":"倫敦"
+					},
+					{
+						"id":618,
+						"name":"阿姆斯特朗"
+					},
+					{
+						"id":777,
+						"name":"東京"
+					},
+					{
+						"id":998,
+						"name":"波士頓"
+					},
+					{
+						"id":8,
+						"name":"薯條"
+					},
+					{
+						"id":6,
+						"name":"咖哩飯"
+					}
+				]
+			</ext:documents>
+		</ext:insertMany>
+		<rollback>
+			<ext:runCommand>
+				<ext:command>
+					{
+						delete: "city",
+						deletes:[{q: {id : {$lt: 100}}, limit: 0}]
+					}
+				</ext:command>
+			</ext:runCommand>
+		</rollback>
     </changeSet>
 </databaseChangeLog>

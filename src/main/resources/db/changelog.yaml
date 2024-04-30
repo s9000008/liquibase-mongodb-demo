@@ -5,3 +5,5 @@ databaseChangeLog:
      file: db/changes/002_insert.xml
   - include:
      file: db/changes/003_drop.xml
+  - include:
+     file: db/changes/004_rollback.xml
